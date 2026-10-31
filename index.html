@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARECA FORNECEDOR | Relógios de Luxo & Alta Precisão</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: {
+                            950: '#030305',
+                            900: '#07070A',
+                            800: '#0F0F14',
+                            700: '#181820',
+                            600: '#23232F'
+                        },
+                        gold: {
+                            100: '#FFF8DB',
+                            200: '#FBE995',
+                            300: '#F5D77F',
+                            400: '#E6C153',
+                            500: '#D4AF37',
+                            600: '#B28E25',
+                            700: '#8A6A14',
+                            800: '#5E4608'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030305;
+            color: #F3F4F6;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Metallic Gold Gradient Text */
+        .gold-text {
+            background: linear-gradient(135deg, #FFF8DB 0%, #F5D77F 25%, #D4AF37 60%, #AA771C 85%, #FBE995 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Metallic Gold Background Gradient */
+        .gold-btn {
+            background: linear-gradient(135deg, #FBE995 0%, #D4AF37 50%, #996B16 100%);
+            color: #030305;
+            transition: all 0.3s ease;
+        }
+
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #FFF5C0 0%, #E2BD44 50%, #B88320 100%);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Glassmorphism Ultra Modern */
+        .glass-panel {
+            background: rgba(15, 15, 20, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.22);
+        }
+
+        .glass-panel:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        /* Ambient Glow Effect */
+        .ambient-gold-glow {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(3, 3, 5, 0) 70%);
+            pointer-events: none;
+        }
+
+        /* Shimmer Animation */
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.35) 50%,
+                transparent 70%
+            );
+            transform: rotate(30deg) translateX(-100%);
+            animation: shimmerEffect 4s infinite;
+        }
+
+        @keyframes shimmerEffect {
+            0% { transform: rotate(30deg) translateX(-100%); }
+            20% { transform: rotate(30deg) translateX(100%); }
+            100% { transform: rotate(30deg) translateX(100%); }
+        }
+
+        /* Gold Neon Glow Border */
+        .gold-border-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030305;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F1F2A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-obsidian-950 via-gold-800/80 to-obsidian-950 text-gold-200 text-xs py-2.5 px-4 text-center font-medium tracking-widest uppercase border-b border-gold-500/20">
+        <span class="inline-flex items-center gap-2">
+            <i class="fa-solid fa-truck-fast text-gold-400"></i> PROMOÇÃO EXCLUSIVA — ENVIO IMEDIATO COM RASTREAMENTO PARA TODO O BRASIL
+        </span>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-obsidian-950/90 backdrop-blur-xl border-b border-gold-500/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- BRAND LOGO -->
+            <a href="#" class="flex flex-col group">
+                <span class="font-serif font-extrabold text-2xl sm:text-3xl tracking-[0.2em] gold-text uppercase transform group-hover:scale-[1.01] transition-transform">
+                    CARECA FORNECEDOR
+                </span>
+                <span class="text-[9px] sm:text-[10px] tracking-[0.4em] text-gray-400 font-light -mt-1 uppercase">
+                    RELOJOARIA PREMIUM
+                </span>
+            </a>
+
+            <!-- DESKTOP NAV -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-wider uppercase text-gray-300">
+                <a href="#inicio" class="hover:text-gold-400 transition-colors">Início</a>
+                <a href="#oferta" class="hover:text-gold-400 transition-colors">Oferta 2x1</a>
+                <a href="#galeria" class="hover:text-gold-400 transition-colors">Galeria HD</a>
+                <a href="#especificacoes" class="hover:text-gold-400 transition-colors">Especificações</a>
+                <a href="#envio" class="hover:text-gold-400 transition-colors">Envio</a>
+                <a href="#garantia" class="hover:text-gold-400 transition-colors">Garantia</a>
+            </nav>
+
+            <!-- HEADER CTA BUTTON -->
+            <div class="flex items-center gap-4">
+                <a href="https://pay.sunize.com.br/bNLHEunC" target="_blank" rel="noopener noreferrer" 
+                   class="shimmer gold-btn font-extrabold text-xs sm:text-sm px-5 sm:px-7 py-3 rounded-md uppercase tracking-wider shadow-lg">
+                    Comprar Agora
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (IMAGEM GIGANTE DO RELÓGIO) -->
+    <section id="inicio" class="relative min-h-[92vh] flex items-center py-12 lg:py-20 overflow-hidden bg-gradient-to-b from-obsidian-950 via-obsidian-900 to-obsidian-950">
+        
+        <!-- Luzes Douradas Ambientais de Fundo -->
+        <div class="ambient-gold-glow w-[700px] h-[700px] -top-40 -left-40 opacity-40"></div>
+        <div class="ambient-gold-glow w-[600px] h-[600px] bottom-0 right-0 opacity-30"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- COLUNA TEXTO HERO -->
+                <div class="lg:col-span-6 text-center lg:text-left space-y-6">
+                    
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-gold-500/40 bg-gold-500/10 text-gold-300 text-xs font-bold tracking-widest uppercase shadow-inner">
+                        <i class="fa-solid fa-crown text-gold-400"></i> Modelo Exclusivo 2026
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-none tracking-tight">
+                        CARECA <span class="block gold-text">FORNECEDOR</span>
+                    </h1>
+
+                    <p class="font-serif text-xl sm:text-2xl text-gold-200/90 italic tracking-wide border-l-2 border-gold-500/60 pl-4 py-1 mx-auto lg:mx-0 max-w-xl">
+                        "Elegância, sofisticação e qualidade em cada detalhe."
+                    </p>
+
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        O relógio <strong class="text-white font-bold">SWATCH 007 FOSCO</strong> representa a fusão perfeita entre imponência masculina e maestria técnica. Acabamento premium banhado a Ouro 18k, vidro safira e 100% funcional.
+                    </p>
+
+                    <!-- CAIXA DE OFERTA RÁPIDA NO HERO -->
+                    <div class="glass-panel p-4 rounded-xl border border-gold-500/30 max-w-xl mx-auto lg:mx-0 flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs uppercase text-gray-400 block tracking-wider">Leve 2 Relógios por apenas</span>
+                            <span class="text-3xl font-extrabold gold-text">R$ 299,00</span>
+                        </div>
+                        <span class="bg-red-950/80 text-red-400 border border-red-500/40 text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wider animate-pulse">
+                            🔥 Envio Imediato
+                        </span>
+                    </div>
+
+                    <!-- HERO CTAS -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://pay.sunize.com.br/bNLHEunC" target="_blank" rel="noopener noreferrer" 
+                           class="w-full sm:w-auto shimmer gold-btn font-extrabold text-base px-9 py-5 rounded-md uppercase tracking-wider text-center shadow-2xl">
+                           <i class="fa-solid fa-cart-shopping mr-2"></i> COMPRAR AGORA — R$ 299,00
+                        </a>
+                        
+                        <a href="#galeria" 
+                           class="w-full sm:w-auto border border-gold-500/40 hover:border-gold-400 text-gold-300 hover:text-white px-7 py-5 rounded-md text-sm uppercase tracking-wider font-bold transition-all text-center bg-obsidian-900/60 backdrop-blur-md">
+                           Ver Fotos em Alta Resolução
+                        </a>
+                    </div>
+
+                    <!-- BADGES CONFIANÇA -->
+                    <div class="pt-6 grid grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0 text-center border-t border-obsidian-700">
+                        <div class="p-2">
+                            <i class="fa-solid fa-gem text-gold-400 text-lg mb-1"></i>
+                            <p class="text-white font-bold text-xs">Vidro Safira</p>
+                            <p class="text-gray-400 text-[10px]">Anti-riscos</p>
+                        </div>
+                        <div class="p-2">
+                            <div class="text-gold-400 font-bold text-base">100%</div>
+                            <p class="text-white font-bold text-xs">Funcional</p>
+                            <p class="text-gray-400 text-[10px]">Calendário Ativo</p>
+                        </div>
+                        <div class="p-2">
+                            <i class="fa-solid fa-battery-full text-gold-400 text-lg mb-1"></i>
+                            <p class="text-white font-bold text-xs">+1 Bateria Extra</p>
+                            <p class="text-gray-400 text-[10px]">Por Relógio</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COLUNA FOTO GIGANTE EM DESTAQUE SUPERIOR (HERO IMAGE HD) -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative mx-auto max-w-lg lg:max-w-none">
+                        
+                        <!-- Efeito Halo Neon Dourado -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-gold-500 via-gold-300 to-gold-700 rounded-3xl blur-2xl opacity-40"></div>
+                        
+                        <!-- Container da Foto Super Dimensionada -->
+                        <div class="relative bg-obsidian-900 border-2 border-gold-500/50 rounded-2xl overflow-hidden shadow-2xl group cursor-pointer" 
+                             onclick="openLightbox('https://i.postimg.cc/8fhrZGgz/image.jpg', 'SWATCH 007 FOSCO - Edição Ouro 18k')">
+                            
+                            <!-- Imagem Principal Gigante -->
+                            <div class="w-full h-[500px] sm:h-[620px] lg:h-[650px] relative overflow-hidden bg-obsidian-950">
+                                <img src="https://i.postimg.cc/8fhrZGgz/image.jpg" 
+                                     onerror="this.onerror=null; this.src='https://postimg.cc/8fhrZGgz';" 
+                                     alt="SWATCH 007 FOSCO em Alta Qualidade - CARECA FORNECEDOR" 
+                                     class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700">
+                            </div>
+
+                            <!-- Overlay de Vidro & Botão de Zoom -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                            
+                            <div class="absolute top-4 right-4 bg-obsidian-950/80 backdrop-blur-md border border-gold-500/40 text-gold-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-expand"></i> HD Fullscreen
+                            </div>
+
+                            <div class="absolute bottom-6 left-6 right-6 p-4 glass-panel rounded-xl border border-gold-500/30 flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-serif font-bold text-lg text-white">SWATCH 007 FOSCO</h3>
+                                    <p class="text-xs text-gold-300">Aço Inoxidável Banhado a Ouro 18k</p>
+                                </div>
+                                <span class="bg-gold-500 text-obsidian-950 font-black text-xs px-3 py-2 rounded uppercase tracking-wider">
+                                    Clique p/ Zoom
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PROMOÇÃO IMPACTANTE LEVE 2 -->
+    <section id="oferta" class="py-20 relative bg-obsidian-900 border-y border-gold-500/30 overflow-hidden">
+        
+        <div class="ambient-gold-glow w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="glass-panel rounded-3xl p-8 sm:p-14 text-center border-2 border-gold-500/50 gold-border-glow relative overflow-hidden">
+                
+                <div class="inline-flex items-center gap-2 bg-red-950/90 border border-red-500/60 text-red-400 font-black text-sm sm:text-base px-6 py-2.5 rounded-full uppercase tracking-widest mb-6 animate-pulse">
+                    🔥 OFERTA ESPECIAL — LEVE 2 PAGUE 1
+                </div>
+
+                <h2 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+                    LEVE 2 RELÓGIOS POR APENAS
+                </h2>
+
+                <!-- SUPER PREÇO DE IMPACTO -->
+                <div class="my-8">
+                    <span class="text-base sm:text-xl text-gray-400 line-through block uppercase tracking-widest font-medium">De R$ 598,00 por apenas</span>
+                    <div class="text-6xl sm:text-8xl font-black gold-text tracking-tighter py-2 my-1 drop-shadow-2xl">
+                        R$ 299,00
+                    </div>
+                    <p class="text-xs sm:text-sm text-gold-300 font-bold uppercase tracking-widest bg-gold-500/10 inline-block px-4 py-1.5 rounded-full border border-gold-500/30">
+                        Preço promocional válido enquanto durar o lote em estoque
+                    </p>
+                </div>
+
+                <!-- GRID DE BENEFÍCIOS -->
+                <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 text-left my-10 p-6 bg-obsidian-950/80 rounded-2xl border border-gold-500/30 text-sm sm:text-base">
+                    
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0">
+                            <i class="fa-solid fa-check text-base"></i>
+                        </div>
+                        <span class="text-gray-200"><strong>Oferta Especial:</strong> 2 Unidades Inclusas</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0">
+                            <i class="fa-solid fa-clock text-base"></i>
+                        </div>
+                        <span class="text-gray-200">Modelo <strong>SWATCH 007 FOSCO</strong></span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0">
+                            <i class="fa-solid fa-box-open text-base"></i>
+                        </div>
+                        <span class="text-gray-200">Produtos a <strong>pronta entrega</strong></span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0">
+                            <i class="fa-solid fa-location-crosshairs text-base"></i>
+                        </div>
+                        <span class="text-gray-200">Acompanhamento de <strong>rastreio Correios</strong></span>
+                    </div>
+
+                    <div class="flex items-center gap-3 sm:col-span-2 justify-center bg-gold-500/15 p-3.5 rounded-xl border border-gold-500/40 mt-2">
+                        <i class="fa-solid fa-battery-full text-gold-400 text-2xl"></i>
+                        <span class="text-gold-200 font-extrabold text-xs sm:text-sm uppercase tracking-wider text-center">
+                            Bateria Extra inclusa em cada relógio (Receba 4 baterias no total)
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- BOTÃO COMPRAR AGORA DA PROMOÇÃO -->
+                <div class="space-y-4">
+                    <a href="https://pay.sunize.com.br/bNLHEunC" target="_blank" rel="noopener noreferrer" 
+                       class="inline-block w-full sm:w-4/5 shimmer gold-btn font-black text-xl sm:text-2xl py-6 rounded-xl uppercase tracking-wider shadow-2xl hover:scale-[1.02]">
+                        COMPRAR AGORA — GARANTIR MEUS 2 RELÓGIOS
+                    </a>
+                    <p class="text-xs text-gray-400 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-gold-400"></i> Checkout Oficial Seguro Sunize Pay — Envio Garantido
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: GALERIA GIGANTE DE FOTOS DO PRODUTO (HIGH RES) -->
+    <section id="galeria" class="py-24 bg-obsidian-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-bold uppercase tracking-[0.3em] block mb-2">Exibição de Alta Definição</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-white mb-4">GALERIA SWATCH 007 FOSCO</h2>
+                <div class="w-28 h-1.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto"></div>
+                <p class="text-gray-400 text-sm sm:text-base mt-4">
+                    Imagens reais em proporção expandida. Clique sobre qualquer foto para navegar em modo Fullscreen HD.
+                </p>
+            </div>
+
+            <!-- GRID GALERIA GIGANTE -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- FOTO GALERIA 1 -->
+                <div class="glass-panel rounded-2xl overflow-hidden group cursor-pointer border-2 border-gold-500/30"
+                     onclick="openLightbox('https://i.postimg.cc/8fhrZGgz/image.jpg', 'SWATCH 007 FOSCO - Vista Principal com Pulseira de Aço Inoxidável Banhada a Ouro 18k')">
+                    
+                    <div class="relative h-[480px] sm:h-[600px] overflow-hidden bg-obsidian-900">
+                        <img src="https://i.postimg.cc/8fhrZGgz/image.jpg" 
+                             onerror="this.onerror=null; this.src='https://postimg.cc/8fhrZGgz';" 
+                             alt="Relógio dourado com pulseira de aço SWATCH 007 FOSCO" 
+                             class="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+
+                        <div class="absolute top-4 right-4 bg-obsidian-950/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gold-500/40 text-gold-300 text-xs font-bold uppercase">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Ampliar HD
+                        </div>
+
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="bg-gold-500/20 text-gold-300 border border-gold-500/40 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest block w-max mb-2">
+                                Foto Oficial 01
+                            </span>
+                            <h3 class="font-serif font-bold text-2xl text-white">Relógio Dourado com Pulseira em Aço Inoxidável</h3>
+                            <p class="text-gray-300 text-sm mt-1">Acabamento fosco luxuoso, caixa trabalhada e mostrador rico em detalhes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOTO GALERIA 2 -->
+                <div class="glass-panel rounded-2xl overflow-hidden group cursor-pointer border-2 border-gold-500/30"
+                     onclick="openLightbox('https://i.postimg.cc/PCcYf2ys/image.jpg', 'SWATCH 007 FOSCO - Detalhes do Mostrador e Pulseira de Borracha Esportiva Premium')">
+                    
+                    <div class="relative h-[480px] sm:h-[600px] overflow-hidden bg-obsidian-900">
+                        <img src="https://i.postimg.cc/PCcYf2ys/image.jpg" 
+                             onerror="this.onerror=null; this.src='https://postimg.cc/PCcYf2ys';" 
+                             alt="Relógio dourado detalhes pulseira borracha preta SWATCH 007 FOSCO" 
+                             class="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+
+                        <div class="absolute top-4 right-4 bg-obsidian-950/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gold-500/40 text-gold-300 text-xs font-bold uppercase">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Ampliar HD
+                        </div>
+
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="bg-gold-500/20 text-gold-300 border border-gold-500/40 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest block w-max mb-2">
+                                Foto Oficial 02
+                            </span>
+                            <h3 class="font-serif font-bold text-2xl text-white">Detalhes do Mostrador & Fecho Cravejado</h3>
+                            <p class="text-gray-300 text-sm mt-1">Fundo trabalhado em alto relevo e pulseira com design esportivo e luxuoso.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CALL TO ACTION DA GALERIA -->
+            <div class="mt-12 text-center">
+                <a href="https://pay.sunize.com.br/bNLHEunC" target="_blank" rel="noopener noreferrer" 
+                   class="inline-block shimmer gold-btn font-extrabold text-base sm:text-lg px-10 py-5 rounded-md uppercase tracking-wider shadow-xl">
+                    QUERO APROVEITAR A OFERTA — R$ 299,00
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 5: DESCRIÇÃO E ESPECIFICAÇÕES TÉCNICAS -->
+    <section id="especificacoes" class="py-20 bg-obsidian-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- COLUNA ESQUERDA: DESCRIÇÃO -->
+                <div class="lg:col-span-7 space-y-6">
+                    
+                    <div class="bg-gold-500/10 border-l-4 border-gold-500 p-5 rounded-r-xl">
+                        <p class="text-gold-300 font-extrabold text-sm uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-gold-400"></i> OBSERVAÇÃO: 100% FUNCIONAL
+                        </p>
+                        <p class="text-white font-bold text-xs sm:text-sm uppercase tracking-widest mt-1">
+                            À PRONTA ENTREGA — ENVIO IMEDIATO PARA TODO O BRASIL.
+                        </p>
+                    </div>
+
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
+                        DESCRIÇÃO DO PRODUTO
+                    </h2>
+
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+                        Relógio com design sofisticado, acabamento dourado e mostrador detalhado, ideal para quem procura elegância e personalidade. Desenvolvido com materiais nobres para suportar o uso diário mantendo a intensidade do banho de Ouro 18k.
+                    </p>
+
+                    <!-- CARACTERÍSTICAS EM CARDS MODERNOS -->
+                    <div class="pt-4">
+                        <h3 class="font-serif font-bold text-xl text-gold-400 mb-4 uppercase tracking-wider">
+                            Características Principais do Produto:
+                        </h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="glass-panel p-3.5 rounded-lg border border-gold-500/20 flex items-center gap-3">
+                                <i class="fa-solid fa-check text-gold-400 text-lg"></i>
+                                <span class="text-gray-200 text-sm font-semibold">100% Funcional</span>
+                            </div>
+                            <div class="glass-panel p-3.5 rounded-lg border border-gold-500/20 flex items-center gap-3">
+                                <i class="fa-solid fa-gem text-gold-400 text-lg"></i>
+                                <span class="text-gray-200 text-sm font-semibold">Vidro Safira</span>
+                            </div>
+                            <div class="glass-panel p-3.5 rounded-lg border border-gold-500/20 flex items-center gap-3">
+                                <i class="fa-solid fa-calendar-check text-gold-400 text-lg"></i>
+                                <span class="text-gray-200 text-sm font-semibold">Calendário Funcional</span>
+                            </div>
+                            <div class="glass-panel p-3.5 rounded-lg border border-gold-500/20 flex items-center gap-3">
+                                <i class="fa-solid fa-ring text-gold-400 text-lg"></i>
+                                <span class="text-gray-200 text-sm font-semibold">Fundo Cravejado</span>
+                            </div>
+                            <div class="glass-panel p-3.5 rounded-lg border border-gold-500/20 flex items-center gap-3">
+                                <i class="fa-solid fa-lock text-gold-400 text-lg"></i>
+                                <span class="text-gray-200 text-sm font-semibold">Fecho Cravejado</span>
+                            </div>
+                            <div class="glass-panel p-3.5 rounded-lg border border-gold-500/20 flex items-center gap-3">
+                                <i class="fa-solid fa-shield text-gold-400 text-lg"></i>
+                                <span class="text-gray-200 text-sm font-semibold">Caixa em Aço Inoxidável</span>
+                            </div>
+                            <div class="glass-panel p-3.5 rounded-lg border border-gold-500/20 flex items-center gap-3">
+                                <i class="fa-solid fa-link text-gold-400 text-lg"></i>
+                                <span class="text-gray-200 text-sm font-semibold">Pulseira em Aço Inoxidável</span>
+                            </div>
+                            <div class="glass-panel p-3.5 rounded-lg border border-gold-500/20 flex items-center gap-3">
+                                <i class="fa-solid fa-coins text-gold-400 text-lg"></i>
+                                <span class="text-gray-200 text-sm font-semibold">Banhado a Ouro 18k</span>
+                            </div>
+                            <div class="glass-panel p-3.5 rounded-lg border border-gold-500/20 flex items-center gap-3 sm:col-span-2">
+                                <i class="fa-solid fa-microchip text-gold-400 text-lg"></i>
+                                <span class="text-gray-200 text-sm font-semibold">Maquinário Quartz de Alta Precisão</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COLUNA DIREITA: ESPECIFICAÇÕES TÉCNICAS -->
+                <div class="lg:col-span-5">
+                    <div class="glass-panel p-8 rounded-2xl border-2 border-gold-500/40 relative">
+                        
+                        <h3 class="font-serif text-2xl font-bold text-white mb-6 pb-4 border-b border-gold-500/30 flex items-center gap-3">
+                            <i class="fa-solid fa-list-check text-gold-400"></i> ESPECIFICAÇÕES
+                        </h3>
+
+                        <ul class="space-y-4 text-sm sm:text-base">
+                            <li class="flex justify-between items-center py-2.5 border-b border-obsidian-700">
+                                <span class="text-gray-400">Peso aproximado:</span>
+                                <span class="font-bold text-white text-right">158g</span>
+                            </li>
+                            <li class="flex justify-between items-center py-2.5 border-b border-obsidian-700">
+                                <span class="text-gray-400">Bateria Extra:</span>
+                                <span class="font-bold text-gold-300 text-right">Acompanha bateria extra</span>
+                            </li>
+                            <li class="flex justify-between items-center py-2.5 border-b border-obsidian-700">
+                                <span class="text-gray-400">Baterias no Envio:</span>
+                                <span class="font-bold text-white text-right">1 em uso + 1 extra por unidade</span>
+                            </li>
+                            <li class="flex justify-between items-center py-2.5 border-b border-obsidian-700">
+                                <span class="text-gray-400">Disponibilidade:</span>
+                                <span class="font-bold text-emerald-400 text-right">Produtos a pronta entrega</span>
+                            </li>
+                            <li class="flex justify-between items-center py-2.5 border-b border-obsidian-700">
+                                <span class="text-gray-400">Abrangência de Envio:</span>
+                                <span class="font-bold text-white text-right">Envio para todo o Brasil</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8">
+                            <a href="https://pay.sunize.com.br/bNLHEunC" target="_blank" rel="noopener noreferrer" 
+                               class="w-full block shimmer gold-btn font-extrabold text-lg py-5 rounded-md uppercase tracking-wider text-center shadow-lg">
+                                GARANTIR MEUS 2 RELÓGIOS
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 6: ENVIO E RASTREAMENTO -->
+    <section id="envio" class="py-20 bg-obsidian-950 border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-bold uppercase tracking-[0.3em] block mb-2">Logística Transparente</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">COMO FUNCIONA O ENVIO?</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- PASSO 1 -->
+                <div class="glass-panel p-8 rounded-2xl text-center relative group hover:border-gold-500/60 transition-colors">
+                    <div class="w-20 h-20 rounded-full gold-btn font-bold text-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <i class="fa-solid fa-barcode"></i>
+                    </div>
+                    <span class="text-xs font-bold text-gold-400 uppercase tracking-widest block mb-2">Passo 01</span>
+                    <h3 class="font-serif font-bold text-xl text-white mb-3">Código de Rastreio</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Após a confirmação da compra, o código de rastreamento será enviado em até 24 horas para o e-mail cadastrado.
+                    </p>
+                </div>
+
+                <!-- PASSO 2 -->
+                <div class="glass-panel p-8 rounded-2xl text-center relative group hover:border-gold-500/60 transition-colors">
+                    <div class="w-20 h-20 rounded-full gold-btn font-bold text-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <span class="text-xs font-bold text-gold-400 uppercase tracking-widest block mb-2">Passo 02</span>
+                    <h3 class="font-serif font-bold text-xl text-white mb-3">Status Atualizado</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Manteremos o status do pedido atualizado para que você possa acompanhar sua compra a qualquer momento.
+                    </p>
+                </div>
+
+                <!-- PASSO 3 -->
+                <div class="glass-panel p-8 rounded-2xl text-center relative group hover:border-gold-500/60 transition-colors">
+                    <div class="w-20 h-20 rounded-full gold-btn font-bold text-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <span class="text-xs font-bold text-gold-400 uppercase tracking-widest block mb-2">Passo 03</span>
+                    <h3 class="font-serif font-bold text-xl text-white mb-3">Coleta & Entrega Correios</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Após a coleta pelos Correios em nosso centro de distribuição, o prazo de entrega será calculado pelos Correios com prioridade total.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 7: GARANTIA DE 30 DIAS -->
+    <section id="garantia" class="py-20 bg-obsidian-900 border-t border-gold-500/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <div class="glass-panel p-10 sm:p-14 rounded-3xl border-2 border-gold-500/50 gold-border-glow relative overflow-hidden">
+                
+                <!-- SELO VISUAL DOURADO 3D -->
+                <div class="w-28 h-28 mx-auto mb-8 relative">
+                    <div class="absolute inset-0 rounded-full gold-btn animate-spin" style="animation-duration: 25s;"></div>
+                    <div class="absolute inset-1.5 rounded-full bg-obsidian-950 flex flex-col items-center justify-center text-gold-400 border border-gold-500/50">
+                        <i class="fa-solid fa-shield-cat text-4xl"></i>
+                    </div>
+                </div>
+
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-white mb-4">
+                    GARANTIA DE 30 DIAS
+                </h2>
+
+                <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+                    Todas as peças possuem <strong class="text-gold-300 font-bold">garantia de 30 dias corridos</strong>, contados a partir da data de entrega. Garantia contra defeitos de fabricação do maquinário, conforme as condições de garantia da loja.
+                </p>
+
+                <a href="https://pay.sunize.com.br/bNLHEunC" target="_blank" rel="noopener noreferrer" 
+                   class="inline-block shimmer gold-btn font-extrabold text-base sm:text-lg px-10 py-5 rounded-md uppercase tracking-wider shadow-2xl">
+                    APROVEITAR PROMOÇÃO AGORA
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 8: ATENDIMENTO PELO WHATSAPP -->
+    <section class="py-16 bg-obsidian-950 border-t border-gold-500/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <div class="w-20 h-20 rounded-full bg-emerald-500/20 text-emerald-400 text-4xl flex items-center justify-center mx-auto mb-6 border border-emerald-500/40">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-white mb-3">
+                FICOU COM ALGUMA DÚVIDA?
+            </h2>
+
+            <p class="text-gray-300 text-base sm:text-lg mb-8 max-w-xl mx-auto">
+                Nossa equipe está pronta para ajudar você! Entre em contato diretamente com nossos especialistas.
+            </p>
+
+            <a href="https://wa.me/5575992515894" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-base sm:text-lg px-8 py-5 rounded-full uppercase tracking-wider shadow-xl hover:scale-105 transition-all">
+                <i class="fa-brands fa-whatsapp text-2xl"></i> Falar no WhatsApp (+55 75 99251-5894)
+            </a>
+
+        </div>
+    </section>
+
+    <!-- RODAPÉ E POLÍTICAS -->
+    <footer class="bg-obsidian-950 text-gray-400 text-xs pt-16 pb-12 border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <!-- BRAND INFO -->
+                <div class="md:col-span-2 space-y-4">
+                    <span class="font-serif font-extrabold text-2xl tracking-[0.2em] gold-text uppercase">
+                        CARECA FORNECEDOR
+                    </span>
+                    <p class="text-gray-400 text-sm max-w-md leading-relaxed">
+                        Relógios e acessórios. Referência em qualidade, design exclusivo e entrega garantida em todo o território nacional.
+                    </p>
+                    <p class="font-serif italic text-gold-300 text-sm pt-2">
+                        "CARECA FORNECEDOR — Seu estilo começa nos detalhes."
+                    </p>
+                </div>
+
+                <!-- ATENDIMENTO & LINKS -->
+                <div>
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4 border-b border-gold-500/20 pb-2">
+                        Atendimento & Links
+                    </h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="https://wa.me/5575992515894" target="_blank" class="hover:text-gold-400 transition-colors flex items-center gap-2"><i class="fa-brands fa-whatsapp text-emerald-500"></i> Atendimento pelo WhatsApp</a></li>
+                        <li><a href="#envio" class="hover:text-gold-400 transition-colors">Envio para todo o Brasil</a></li>
+                        <li><a href="#garantia" class="hover:text-gold-400 transition-colors">Garantia de 30 dias</a></li>
+                        <li><a href="https://pay.sunize.com.br/bNLHEunC" target="_blank" class="hover:text-gold-400 transition-colors">Comprar Promocional</a></li>
+                    </ul>
+                </div>
+
+                <!-- POLÍTICAS -->
+                <div>
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4 border-b border-gold-500/20 pb-2">
+                        Políticas
+                    </h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#garantia" class="hover:text-gold-400 transition-colors">Política de privacidade</a></li>
+                        <li><a href="#garantia" class="hover:text-gold-400 transition-colors">Política de troca e garantia</a></li>
+                        <li class="pt-2 text-gray-300"><strong>Contato:</strong> +55 75 99251-5894</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-obsidian-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                <p>&copy; 2026 CARECA FORNECEDOR. Todos os direitos reservados.</p>
+                <div class="flex items-center gap-4 text-gray-500 text-base">
+                    <i class="fa-solid fa-lock text-gold-400" title="Checkout Seguro"></i>
+                    <i class="fa-solid fa-shield-halved text-gold-400" title="Compra Garantida"></i>
+                    <i class="fa-solid fa-truck-fast text-gold-400" title="Envio Rápido"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5575992515894" target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-white/20"
+       title="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4 backdrop-blur-md" onclick="closeLightbox()">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-gold-400 hover:text-white text-4xl z-50">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-5xl max-h-[90vh] p-2 relative text-center" onclick="event.stopPropagation()">
+            <img id="lightboxImg" src="" alt="Ampliação SWATCH 007 FOSCO" class="max-w-full max-h-[80vh] rounded-xl border-2 border-gold-500/40 object-contain mx-auto shadow-2xl">
+            <p id="lightboxCaption" class="text-gold-200 text-sm font-serif mt-4 font-bold"></p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LIGHTBOX -->
+    <script>
+        function openLightbox(imgSrc, caption) {
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            const modalCaption = document.getElementById('lightboxCaption');
+            
+            modalImg.src = imgSrc;
+            modalCaption.innerText = caption || 'SWATCH 007 FOSCO — CARECA FORNECEDOR';
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
